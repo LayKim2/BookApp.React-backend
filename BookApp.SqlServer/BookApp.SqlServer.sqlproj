@@ -59,7 +59,7 @@
     <Folder Include="Books" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Books\Books.sql" />
+    <Build Include="Books\01_Books.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BookApp.SqlServer.publish.xml" />
