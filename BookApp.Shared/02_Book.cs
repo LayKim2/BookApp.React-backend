@@ -27,6 +27,7 @@ namespace BookApp.Shared
         /// </summary>
         [Display(Name = "책 설명")]
         public string Description { get; set; }
+        public DateTime? Created { get; set; }
     }
 
     // DataAnnotations pkg
