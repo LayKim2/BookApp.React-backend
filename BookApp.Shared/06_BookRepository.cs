@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dul.Articles;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -89,8 +90,28 @@ namespace BookApp.Shared
 
                 throw;
             }
+        }
+        #endregion
+
+        /// <summary>
+        /// 필터링
+        /// </summary>
+        /// <typeparam name="TParentIdentifier"></typeparam>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="searchField"></param>
+        /// <param name="searchQuery"></param>
+        /// <param name="sortOrder"></param>
+        /// <param name="parentIdentifier"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        #region GetArticlesAsync
+        public Task<ArticleSet<Book, int>> GetArticlesAsync<TParentIdentifier>(int pageIndex, int pageSize, string searchField, string searchQuery, string sortOrder, TParentIdentifier parentIdentifier)
+        {
+            throw new NotImplementedException();
         } 
         #endregion
+
 
 
 
