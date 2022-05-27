@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookApp.React", "BookApp.React\BookApp.React.csproj", "{ABB0A0D5-FA18-47ED-AA7C-C621DF0764E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookApp.React", "BookApp.React\BookApp.React.csproj", "{ABB0A0D5-FA18-47ED-AA7C-C621DF0764E3}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BookApp.SqlServer", "BookApp.SqlServer\BookApp.SqlServer.sqlproj", "{A8E7FD0F-6FC5-4C3B-9FA6-BFCF6F8B6C07}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookApp.Shared", "BookApp.Shared\BookApp.Shared.csproj", "{D52B22D2-2E7B-467B-B9CA-F80641663ADB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookApp.Shared.Tests", "BookApp.Shared.Tests\BookApp.Shared.Tests.csproj", "{E756442D-CB15-403B-8BFF-608DCDF08A02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookApp.Shared", "BookApp.Shared\BookApp.Shared.csproj", "{D52B22D2-2E7B-467B-B9CA-F80641663ADB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{D52B22D2-2E7B-467B-B9CA-F80641663ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D52B22D2-2E7B-467B-B9CA-F80641663ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D52B22D2-2E7B-467B-B9CA-F80641663ADB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E756442D-CB15-403B-8BFF-608DCDF08A02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E756442D-CB15-403B-8BFF-608DCDF08A02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E756442D-CB15-403B-8BFF-608DCDF08A02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E756442D-CB15-403B-8BFF-608DCDF08A02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

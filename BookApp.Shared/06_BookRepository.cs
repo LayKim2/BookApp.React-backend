@@ -1,5 +1,4 @@
-﻿using Dul.Articles;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -90,16 +89,11 @@ namespace BookApp.Shared
 
                 throw;
             }
-        }
-
-
-        #region 필터링(?) GetArticlesAsync
-        public Task<ArticleSet<Book, int>> GetArticlesAsync<TParentIdentifier>(int pageIndex, int pageSize, string searchField, string searchQuery, string sortOrder, TParentIdentifier parentIdentifier)
-        {
-            throw new NotImplementedException();
         } 
         #endregion
-        #endregion
+
+
+
 
 
 

@@ -44,7 +44,6 @@ namespace BookApp.Shared
             }
         }
 
-        // book table에 데이터가 추가될 때, Created column은 자동으로 getdate()로 날짜가 들어가도록
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Books 테이블의 Created 열의 자동으로 GetDate() 제약조건 부여하기
