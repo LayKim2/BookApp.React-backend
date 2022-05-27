@@ -11,8 +11,8 @@ namespace BookApp.Shared
         /// <summary>
         /// 일련번호
         /// </summary>
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key] // primary key
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // identity
         [Display(Name = "번호")]
         public int Id { get; set; }
         /// <summary>
