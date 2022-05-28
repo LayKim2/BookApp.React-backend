@@ -13,8 +13,7 @@ namespace BookApp.Shared
 
     public interface IBookCrudRepository<T> : ICrudRepositoryBase<T, int>   
     {
-        // test
-        
+
     }
 }
  
