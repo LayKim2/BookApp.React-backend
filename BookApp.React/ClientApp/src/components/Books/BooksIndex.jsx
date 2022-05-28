@@ -1,4 +1,5 @@
 ﻿import React, { Component } from 'react';
+import axios from 'axios';
 
 
 export class BooksIndex extends Component {
@@ -13,7 +14,9 @@ export class BooksIndex extends Component {
 
     // page initialized
     componentDidMount() {
-        this.populateBooksData();
+        //this.populateBooksData();
+        //this.populateBooksDataWithAxios();
+        this.populateBooksDataWithAxiosAsync();
     }
 
     static renderBooksTable(books) {
@@ -56,9 +59,26 @@ export class BooksIndex extends Component {
         );
     }
 
+    // Fetch API
     async populateBooksData() {
         const response = await fetch("/api/books");
         const data = await response.json();
+        this.setState({ books: data, loading: false });
+    }
+
+    // Axios 2가지 방식인데 둘다 async라고함
+    // 첫번째 방식
+    populateBooksDataWithAxios() {
+        axios.get("/api/books").then(response => {
+            const data = response.data;
+            this.setState({ books: data, loading: false });
+        });
+    }
+
+    // 두번째 방식
+    async populateBooksDataWithAxiosAsync() {
+        const response = await axios.get("/api/books");
+        const data = response.data;
         this.setState({ books: data, loading: false });
     }
 }
