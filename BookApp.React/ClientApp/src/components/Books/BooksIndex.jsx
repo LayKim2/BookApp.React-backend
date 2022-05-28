@@ -11,6 +11,11 @@ export class BooksIndex extends Component {
         }
     }
 
+    // page initialized
+    componentDidMount() {
+        this.populateBooksData();
+    }
+
     static renderBooksTable(books) {
         return (
             <table className='table table-striped' aria-labelledby="tabelLabel">
@@ -26,9 +31,9 @@ export class BooksIndex extends Component {
                     {books.map(book =>
                         <tr key={book.id}>
                             <td>{book.id}</td>
-                            <td>{book.Title}</td>
-                            <td>{book.Description}</td>
-                            <td>{book.Created}</td>
+                            <td>{book.title}</td>
+                            <td>{book.description}</td>
+                            <td>{book.created}</td>
                         </tr>
                     )}
                 </tbody>
@@ -49,5 +54,11 @@ export class BooksIndex extends Component {
                 {content}
             </div>
         );
+    }
+
+    async populateBooksData() {
+        const response = await fetch("/api/books");
+        const data = await response.json();
+        this.setState({ books: data, loading: false });
     }
 }
