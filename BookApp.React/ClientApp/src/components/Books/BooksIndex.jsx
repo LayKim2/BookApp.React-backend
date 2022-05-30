@@ -10,6 +10,10 @@ export class BooksIndex extends Component {
             books: [],
             loading: true
         }
+
+        this.editBy = this.editBy.bind(this);
+        this.deleteBy = this.deleteBy.bind(this);
+
     }
 
     // page initialized
@@ -19,7 +23,7 @@ export class BooksIndex extends Component {
         this.populateBooksDataWithAxiosAsync();
     }
 
-    static renderBooksTable(books) {
+    renderBooksTable(books) {
         return (
             <table className='table table-striped' aria-labelledby="tabelLabel">
                 <thead>
@@ -28,6 +32,7 @@ export class BooksIndex extends Component {
                         <th>Title</th>
                         <th>Description</th>
                         <th>Created</th>
+                        <th>Action, Admin</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +41,12 @@ export class BooksIndex extends Component {
                             <td>{book.id}</td>
                             <td>{book.title}</td>
                             <td>{book.description}</td>
-                            <td>{book.created}</td>
+                            <td>{book.created ? new Date(book.created).toLocaleDateString() : "-"}</td>
+                            <td className="text-nowrap">
+                                <button className="btn btn-sm btn-primary" onClick={() => this.editBy(book.id) }>Edit</button>
+                                &nbsp;
+                                <button className="btn btn-sm btn-danger" onClick={() => this.deleteBy(book.id) }>Delete</button>
+                            </td>
                         </tr>
                     )}
                 </tbody>
@@ -44,15 +54,27 @@ export class BooksIndex extends Component {
         );
     }
 
+    goCreatePage() {
+        console.log("create");
+    }
+
+    editBy(id) {
+        console.log("edit by + " + id);
+    }
+
+    deleteBy(id) {
+        console.log("delete by + " + id);
+    }
+
     render() {
 
         let content = this.state.loading
             ? <p><em>Loading...</em></p>
-            : BooksIndex.renderBooksTable(this.state.books);
+            : this.renderBooksTable(this.state.books);
 
         return (
             <div>
-                <h1>My Books</h1>
+                <h1>My Books <button className="btn btn-primary" onClick={this.goCreatePage}><span className="fa fa-plus">+</span></button></h1>
                 <h2>제가 집필한 책입니다.</h2>
                 {content}
             </div>
