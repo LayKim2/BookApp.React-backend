@@ -11,6 +11,7 @@ export class BooksIndex extends Component {
             loading: true
         }
 
+        this.goCreatePage = this.goCreatePage.bind(this);
         this.editBy = this.editBy.bind(this);
         this.deleteBy = this.deleteBy.bind(this);
 
@@ -55,15 +56,23 @@ export class BooksIndex extends Component {
     }
 
     goCreatePage() {
-        console.log("create");
+        //console.log("create");
+        const { history } = this.props;
+        // history.goBack(); 이전 페이지로 돌아감 
+        // ref : https://gongbu-ing.tistory.com/45
+        history.push('/Books/Create');
     }
 
     editBy(id) {
-        console.log("edit by + " + id);
+        //console.log("edit by + " + id);
+        const { history } = this.props;
+        history.push('/Books/Edit/' + id);
     }
 
     deleteBy(id) {
-        console.log("delete by + " + id);
+        //console.log("delete by + " + id);
+        const { history } = this.props;
+        history.push('/Books/Delete/' + id);
     }
 
     render() {
