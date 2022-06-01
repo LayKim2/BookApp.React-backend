@@ -14,11 +14,16 @@ builder.Services.AddControllersWithViews();
 // pkg : Microsoft.EntityFrameworkCore.SqlServer
 
 // new dbcontext add
-builder.Services.AddEntityFrameworkSqlServer().AddDbContext<BookAppDbContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+//builder.Services.AddEntityFrameworkSqlServer().AddDbContext<BookAppDbContext>(options =>
+//        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// db container에 repository 등록
-builder.Services.AddTransient<IBookRepository, BookRepository>();
+//// db container에 repository 등록
+//builder.Services.AddTransient<IBookRepository, BookRepository>();
+
+
+// 프로젝트 별로 각각 셋팅이 아니라, Shared에 등록되어 있는 것으로 셋팅
+builder.Services.AddDependencyInjectionContainerForBookApp(builder.Configuration.GetConnectionString("DefaultConnection"));
+
 #endregion
 
 var app = builder.Build();
