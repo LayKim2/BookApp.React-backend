@@ -14,6 +14,7 @@ export class BooksIndex extends Component {
         this.goCreatePage = this.goCreatePage.bind(this);
         this.editBy = this.editBy.bind(this);
         this.deleteBy = this.deleteBy.bind(this);
+        this.detailBy = this.detailBy.bind(this);
 
     }
 
@@ -38,8 +39,8 @@ export class BooksIndex extends Component {
                 </thead>
                 <tbody>
                     {books.map(book =>
-                        <tr key={book.id}>
-                            <td>{book.id}</td>
+                        <tr key={book.id} onClick={() => this.detailBy(book.id)}>
+                            <td >{book.id}</td>
                             <td>{book.title}</td>
                             <td>{book.description}</td>
                             <td>{book.created ? new Date(book.created).toLocaleDateString() : "-"}</td>
@@ -71,8 +72,25 @@ export class BooksIndex extends Component {
 
     deleteBy(id) {
         //console.log("delete by + " + id);
+        //const { history } = this.props;
+        //history.push('/Books/Delete/' + id);
+
+        //e.preventDefault();
+
+        if (window.confirm("Do you want to delete?")) {
+
+            axios.delete('/api/books/' + id);
+
+            this.populateBooksDataWithAxiosAsync();
+
+        } else {
+            return false;
+        }
+    }
+
+    detailBy(id) {
         const { history } = this.props;
-        history.push('/Books/Delete/' + id);
+        history.push('/Books/Detail/' + id);
     }
 
     render() {

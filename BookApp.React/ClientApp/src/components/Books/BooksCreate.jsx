@@ -11,22 +11,26 @@ export class BooksCreate extends Component {
             created: null,
         };
 
+        // event binding
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
-        this.handleChangeDescription = this.handleChangeDescription.bind(this);
+        //this.handleChangeDescription = this.handleChangeDescription.bind(this);
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.goIndex = this.goIndex.bind(this);
 
     }
 
+    // [1] 함수로 이벤트 처리기 만들고 생성자에 바인딩
     handleChangeTitle(e) {
         this.setState({
             title: e.target.value
         });
     }
 
-    handleChangeDescription(e) {
+    // [2] 화살표 함수 (람다 식) 으로 event binding
+    handleChangeDescription = (event) => {
         this.setState({
-            description: e.target.value
+            description: event.target.value
         });
     }
 
