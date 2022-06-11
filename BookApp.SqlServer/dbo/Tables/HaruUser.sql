@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[HaruUser]
+(
+	[UserID] NVARCHAR(50) NOT NULL PRIMARY KEY, 
+    [Pass] NVARCHAR(MAX) NOT NULL, 
+    [Salt] NVARCHAR(MAX) NOT NULL, 
+    [Created] DATETIME NULL, 
+    [Iteration] INT NOT NULL DEFAULT 0
+
+)

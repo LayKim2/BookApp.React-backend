@@ -23,7 +23,7 @@ export class BooksCreate extends Component {
     // [1] 함수로 이벤트 처리기 만들고 생성자에 바인딩
     handleChangeTitle(e) {
         this.setState({
-            title: e.target.value
+            title: e.target.value   
         });
     }
 
@@ -48,7 +48,7 @@ export class BooksCreate extends Component {
         };
 
         axios.post("/api/books", bookDto).then(result => {
-            this.goIndex();
+            //this.goIndex();
         });
 
     }

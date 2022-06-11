@@ -25,8 +25,9 @@ namespace BookApp.Shared
             services.AddEntityFrameworkSqlServer().AddDbContext<BookAppDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
-            // db container에 repository 등록
+            // db container에 repository 등록  
             services.AddTransient<IBookRepository, BookRepository>();
+            services.AddTransient<IHaruUserRepository, HaruUserRepository>();
         }
     }
 }
