@@ -48,7 +48,7 @@ export class BooksCreate extends Component {
         };
 
         axios.post("/api/books", bookDto).then(result => {
-            //this.goIndex();
+            this.goIndex();
         });
 
     }

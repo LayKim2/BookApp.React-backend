@@ -12,6 +12,7 @@ export class BooksDetail extends Component {
         };
 
         this.deleteBy = this.deleteBy.bind(this);
+        this.goIndex = this.goIndex.bind(this);
 
     }
 
@@ -44,6 +45,11 @@ export class BooksDetail extends Component {
 
     }
 
+    goIndex() {
+        const { history } = this.props;
+        history.push("/Books");
+    }
+
     render() {
         return (
             <>
@@ -69,7 +75,7 @@ export class BooksDetail extends Component {
                             <div className="form-group">
                                 <button type="submit" className="btn btn-danger" onClick={this.deleteBy}>Delete</button>
                                 &nbsp;
-                                <button className="btn btn-secondary">List</button>
+                                <button className="btn btn-secondary" onClick={this.goIndex}>List</button>
                             </div>
                         </form>
                     </div>

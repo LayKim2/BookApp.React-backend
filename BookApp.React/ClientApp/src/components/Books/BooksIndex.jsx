@@ -40,10 +40,10 @@ export class BooksIndex extends Component {
                 <tbody>
                     {books.map(book =>
                         <tr key={book.id} onClick={() => this.detailBy(book.id)}>
-                            <td >{book.id}</td>
-                            <td>{book.title}</td>
-                            <td>{book.description}</td>
-                            <td>{book.created ? new Date(book.created).toLocaleDateString() : "-"}</td>
+                            <td onClick={() => this.detailBy(book.id)} >{book.id}</td>
+                            <td onClick={() => this.detailBy(book.id)} >{book.title}</td>
+                            <td onClick={() => this.detailBy(book.id)} >{book.description}</td>
+                            <td onClick={() => this.detailBy(book.id)} >{book.created ? new Date(book.created).toLocaleDateString() : "-"}</td>
                             <td className="text-nowrap">
                                 <button className="btn btn-sm btn-primary" onClick={() => this.editBy(book.id) }>Edit</button>
                                 &nbsp;
@@ -66,26 +66,27 @@ export class BooksIndex extends Component {
 
     editBy(id) {
         //console.log("edit by + " + id);
+        alert('edit');
         const { history } = this.props;
         history.push('/Books/Edit/' + id);
     }
 
     deleteBy(id) {
         //console.log("delete by + " + id);
-        //const { history } = this.props;
-        //history.push('/Books/Delete/' + id);
+        const { history } = this.props;
+        history.push('/Books/Delete/' + id);
 
         //e.preventDefault();
 
-        if (window.confirm("Do you want to delete?")) {
+        //if (window.confirm("Do you want to delete?")) {
 
-            axios.delete('/api/books/' + id);
+        //    axios.delete('/api/books/' + id);
 
-            this.populateBooksDataWithAxiosAsync();
+        //    this.populateBooksDataWithAxiosAsync();
 
-        } else {
-            return false;
-        }
+        //} else {
+        //    return false;
+        //}
     }
 
     detailBy(id) {
