@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
 
 import './custom.css'
 import { BooksIndex } from './components/Books/BooksIndex';
@@ -14,6 +12,10 @@ import { BooksDetail } from './components/Books/BooksDetail';
 
 import { Register } from './components/Account/Register';
 import { Login } from './components/Account/Login';
+
+
+import Auth from "./components/Account/Kakao/Auth";
+import Profile from "./components/Account/Kakao/Profile";
 
 export default class App extends Component {
     static displayName = App.name;
@@ -32,6 +34,16 @@ export default class App extends Component {
                 <Route path='/Books/Detail/:id' component={BooksDetail} exact="true" />
                 <Route path='/Register' component={Register} exact="true" />
                 <Route path='/Login' component={Login} exact="true" />
+
+                {/* kakao */}
+                <Route path="/KakaoLogin/Callback">
+                    <Auth />
+                </Route>
+                <Route path="/profile">
+                    <Profile />
+                </Route>
+                {/* kakao */}
+
             </Layout>
         );
     }

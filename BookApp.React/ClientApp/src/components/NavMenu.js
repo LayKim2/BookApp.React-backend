@@ -28,8 +28,6 @@ export class NavMenu extends Component {
                     <Container>
                         <NavbarBrand tag={Link} to="/">BookApp.React</NavbarBrand>
                         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-                        if()
-                        <div>Hello!</div>
                         <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
                             <ul className="navbar-nav flex-grow">
                                 <NavItem>

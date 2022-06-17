@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
 import axios from 'axios';
+import KakaoLogin from './Kakao/KakaoLogin';
 
 export class Register extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ export class Register extends Component {
     // [1] 함수로 이벤트 처리기 만들고 생성자에 바인딩
     handleChangeID(e) {
         this.setState({
-            id: e.target.value   
+            id: e.target.value
         });
     }
 
@@ -90,6 +91,11 @@ export class Register extends Component {
                                 <button className="btn btn-secondary" onClick={this.goHome}>Home</button>
                             </div>
                         </form>
+
+                        <br />
+
+                        <KakaoLogin/>
+
                     </div>
                 </div>
             </>
