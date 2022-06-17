@@ -66,7 +66,6 @@ export class BooksIndex extends Component {
 
     editBy(id) {
         //console.log("edit by + " + id);
-        alert('edit');
         const { history } = this.props;
         history.push('/Books/Edit/' + id);
     }
